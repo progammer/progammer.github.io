@@ -1,0 +1,35 @@
+body {
+	background-color: black;
+	color: green;
+	font-weight: bold;
+	font-family: Courier New;
+}
+
+a {
+	background-color: red;
+	margin: 20px;
+	padding: 20px;
+}
+
+header {
+	background: black;
+}
+
+header h1 {
+	color: green;
+	display: inline;
+	margin: 0;
+}
+
+nav ul {
+	display: inline;
+	padding: 0 0 0 10px;
+}
+
+nav ul li {
+	background-color: black;
+	color: white;
+	display: inline-block;
+	list-style-type: none;
+	padding: ;
+}
