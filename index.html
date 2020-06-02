@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en-US" dir="ltr">
 <head>
 	<title>Caleb Park</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
@@ -10,23 +10,68 @@
  	<meta name="author" content="Caleb Park">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	 <script>
+		// note: function() synonymous with () => 'arrow functions'
+		$(document).ready(function(){
+			var listItems = $("li#navi");
+			listItems.hover(function(){
+				$(event.target).toggleClass("alt");
+			})
+			listItems.on('click', () => {
+				$("div").fadeToggle();
+			})
+
+		});
+
+		// TODO:
+		// Somehow get text to align at top / not shift during font size changes
+		// Clicking nav element opens text boxes-- closes upon opening another one
+		// music : rec generator
+		// 
+
+		
+		 // https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window 
+
+		function toggleLightMode() {
+			document.body.classList.toggle("light-mode");
+		}
+
+		function openInNewTab(url) {
+ 			var win = window.open(url);//, '_blank');
+		}
+		//focus?
+
+		function changeColor(newColor) {
+			var elem = document.getElementById('bruh');
+			elem.style.color = newColor;
+		}
+
+		var li = document.getElementByID("bruh2");
+		li.addEventListener("click", changeColor('green'), true);
+
+	</script>
+
 </head>
 
 <body>
 
 	<header>
-		<nav>
-			<h1>Caleb Park</h1>
-			<ul>
-				<li>music</li>
-				<li>Contact</li>
-				<li>Links</li>
-				<li>Test 1</li>
-				<li>Test 2</li>
-				<li>Test 3</li>
-			</ul>
-		</nav>
+		<h1> caleb park </h1>
+		
+		
 	</header>
+	<ul>
+		<li id="navi">music</li>
+		<li id="navi" onmouseover="changeColor('green')" onmouseout = "changeColor('white')">contact</li>
+		<li id="navi">links</li>
+		<li onclick="openInNewTab('https://www.google.com')">Test 1</li>
+		<li>Test 2</li>
+		<li></li>
+	</ul>
+	<button onclick="toggleLightMode()">test</button>
+	<div hidden onclick="openInNewTab('about:blank')">CONTACT 1</div>
+	<div hidden>CONTACT 2<span class="field"></span></div>
 </body>
 
 
