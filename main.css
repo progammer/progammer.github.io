@@ -3,7 +3,7 @@ body {
 	background-color: black;
 	color: white;
 	font-weight: bold;
-	font-family: Courier New;
+	font-family: "Lucida Console", Monaco, monospace;
 }
 
 .light-mode {
