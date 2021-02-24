@@ -1,56 +1,20 @@
 <!doctype html>
 <html lang="en-US" dir="ltr">
 <head>
+	<!-- Tab Display Name -->
 	<title>Caleb Park</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	
 	<meta charset="UTF-8">
   	<meta name="description" content="Caleb Park's personal website">
  	<meta name="keywords" content="HTML, CSS, JavaScript">
  	<meta name="author" content="Caleb Park">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	 <script>
-		// note: function() synonymous with () => 'arrow functions'
-		$(document).ready(function(){
-			var listItems = $("li#navi");
-			listItems.hover(function(){
-				$(event.target).toggleClass("alt");
-			})
-			listItems.on('click', () => {
-				$("div").fadeToggle();
-			})
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
-		});
-
-		// TODO:
-		// Somehow get text to align at top / not shift during font size changes
-		// Clicking nav element opens text boxes-- closes upon opening another one
-		// music : rec generator
-		// 
-
-		
-		 // https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window 
-
-		function toggleLightMode() {
-			document.body.classList.toggle("light-mode");
-		}
-
-		function openInNewTab(url) {
- 			var win = window.open(url);//, '_blank');
-		}
-		//focus?
-
-		function changeColor(newColor) {
-			var elem = document.getElementById('bruh');
-			elem.style.color = newColor;
-		}
-
-		var li = document.getElementByID("bruh2");
-		li.addEventListener("click", changeColor('green'), true);
-
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="./index.js"></script>
 
 </head>
 
@@ -63,27 +27,99 @@
 		<div class="particle particle-4"></div>
 	</div>
 
-	<header>
-		<h1> > caleb park </h1>
-		
-	</header>
-	<ul>
-		<li id="navi">music</li>
-		<li id="navi" onmouseover="changeColor('green')" onmouseout = "changeColor('white')">contact</li>
-		<li id="navi">links</li>
-		<li onclick="openInNewTab('https://www.google.com')">Test 1</li>
-		<li>Test 2</li>
-		<li></li>
-	</ul>
-	<br>
-	<button onclick="toggleLightMode()">eye frier</button>
-	<div hidden onclick="openInNewTab('about:blank')">CONTACT 1</div>
-	<div hidden>CONTACT 2<span class="field"></span></div>
-	<div onclick="openInNewTab('https://discord.com/api/oauth2/authorize?client_id=717520168682651718&permissions=8&scope=bot')">Discord Bot Invite Link[in development]</div>
+	<div class="noselect" style="display:flex; justify-content:center;">
+		<div id="loc"></div>
+	</div>
+
+	<!--Original Elements to be Rendered after initial typing anim-->
+	<div id="initshow" class="hidden">
+		<p id="intro">
+		hello and welcome! I'm a Computer Science student at the University of Texas at Austin.
+		I love math, programming, art, and music. I'm also interested in game development, which I view as a culmination of my passions.
+		</p>
+		<div id="home" class="noselect navbar">
+			<!--<div class="navi">self</div>-->
+			<div class="navi">work</div>
+			<div class="navi">sharing</div>
+			<div class="navi">connect</div>
+		</div>
+		<img src="altrun.gif" class="sprite" style="bottom: 0; left: 0" width = "128" height = "128">
+		<img src="tofu1.gif" class="sprite" style="bottom: 0; right: 0" width = "128" height = "128">
+	</div>
+
+	<!--Back button-->
+	<div id="back" class="noselect hidden">return</div>
+
+	<!--Can't actually use hidden class over display:none, because jquery toggle fade changes it to a block display-->
+	<div id="self" class="noselect navbar" style="display:none">
+		<div class="navi">body</div>
+		<div class="navi">mind</div>
+	</div>
+
+	<div id="work" class="noselect navbar" style="display:none">
+		<div class="navi">experience</div>
+		<div class="navi">projects</div>
+	</div>
+
+	<p id="experience" style="display:none">	
+		I am particularly interested in roles in software engineering, data science, or game development.<br>
+		I have served as a:<br>
+		- Mathematics Tutor<br>
+		- Cashier/Barista @ Sweet Hut Cafe and Bakery<br>
+		- Teaching Assistant for Dr. Chand John's CS312 course @ UT Austin<br>
+	</p>
+
+	<p id="projects" style="display:none">
+		a few things I have worked on [links coming soon]:<br>
+		- SnapPack [HackTX 2019 Best Use of Google Cloud Vision API], React Native<br>
+		- OKZoomer: Chrome Extension, Centralized Zoom Links, Reminders + Autojoin<br>
+		- Sumo Sushi [UT EGaDS Micro-Game Jam], art + sfx + programming in C# (Unity)<br>
+		- Bug Bite [UT Game Jam 2019]<br>
+		- Discord Game Bot (basic moderation features + games)
+		<!---Producktive-->
+		<!---Stowic-->
+	</p>
+
+
+	<p id="self" style="display:none">
+	
+	> self
+	/mind: consciousness, thinking, transparency, circumstance, goal, brain software Stoicism metacognition
+	/body: working out 
+
+	</p>
 	
 
+	<p id="sharing" style="display:none">
+		I seek to spread awareness of things I find enjoyable with hopes that others can find enjoyment in them too! <br>
+		Anime:<br>
+		- Hunter x Hunter<br>
+		- Psychopass S1<br>
+		- Parasyte<br>
+		- Toradora<br>
+		- Promised Neverland S1<br>
+		Musical Artists:<br>
+		- Grant<br>
+		- San Holo<br>
+		- Geoxor<br>
+		- MitiS<br>
+		- YOASOBI<br>
+		- Porter Robinson<br>
+		- Madeon<br>
+		<!-- [Insert Spreadsheet, fmt: Song | Links | Classifier/Grouping]<br>-->
+		<!--iframe src="https://docs.google.com/document/d/e/2PACX-1vSZIr17XR3mMuoq3vzLmF4OU34_9ICu73rpAEo1o4K0UaCA0b-fmqi_JJ970y83Jz5eWu8v9_dFL4Py/pub?embedded=true"></iframe>
+		-->
+		Games:<br>
+		- Undertale
+	</p>
+
+	<p id="connect" style="display:none; text-align:center">
+		don't hesitate to reach out, I am happy to talk<br>
+		here are a few links where you can find me<br>
+		<img class='noselect icon' onclick="openInNewTab('https://github.com/progammer')" src="github.png">
+		<img class='noselect icon' onclick="openInNewTab('https://www.linkedin.com/in/calebapark/')" src="linkedin.png">
+		<img class='noselect icon' onclick="openInNewTab('mailto:calebpark@utexas.edu')" src="email.png">
+	</p>
 
 </body>
-
-
 </html>
