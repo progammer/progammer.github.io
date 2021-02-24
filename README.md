@@ -1,3 +1,3 @@
 # progammer.github.io
 
-my humble abode
+my humble abode @ <progammer.github.io>

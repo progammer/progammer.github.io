@@ -47,6 +47,7 @@ $(document).ready(function(){
         if (!isTyping) {
             // why does 'this' give undefined (vs. e.target)
             var path = e.target.innerHTML;
+            let formerTop = pathPos[pathPos.length-1];
             pathPos.push(path);
             type("/" + path, () => {
                 $("#" + path).fadeToggle();
@@ -56,13 +57,13 @@ $(document).ready(function(){
                 returnButton.fadeIn();
             }
             // toggle the former top element (after pushing new)
-            $("#" + pathPos[pathPos.length - 2]).fadeToggle();
+            $("#" + formerTop).fadeToggle();
         }
     })
 
     // remove path names
     returnButton.on("click", () => {
-        if (pathPos.length > 1) {
+        if (!isTyping && pathPos.length > 1) {
             var toRemove = pathPos.pop();
             $("#" + toRemove).fadeOut();
             // +1 handles the slash character
