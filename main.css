@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 /** https://stackoverflow.com/questions/12316501/including-google-web-fonts-link-or-import/12380004#12380004 */
 
+:visited, :active {
+	color: white;
+}
+
 body {
 	transition: all 1s;
 	background-color: black;
@@ -42,10 +46,17 @@ p {
 	margin-right:20%;
 }
 
+#intro {
+	margin: auto;
+	margin-top: 20px;
+	width: fit-content;
+}
+
+/* 
 a {
 	margin: 20px;
 	padding: 20px;
-}
+} */
 
 
 #loc {
@@ -86,6 +97,8 @@ ul {
 	cursor: pointer;
 	display: inline-block;
 	list-style-type: none;
+	margin-left:5px;
+	margin-right:5px;
 	transition: all 0.4s;
 }
 
@@ -98,8 +111,9 @@ ul {
 #back {
 	cursor: pointer;
 	position: fixed;
-	top: 0;
-	left: 0;
+	top: 5px;
+	left: 5px;
+	background-color: rgba(37, 37, 37, 1);
 }
 
 img.sprite {
